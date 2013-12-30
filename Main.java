@@ -19,6 +19,7 @@ public class Main {
 	private static Scanner sc;
 	private static String result = "";
 	private static int[] combs;
+	private static int counter = 0;
 	
 	/** main method for class. */
 	public static void main(String[] args) {
@@ -65,6 +66,7 @@ public class Main {
 					count++;
 				}
 			}
+			counter++;
 			result = result + count + "\n";
 		}
 		output.print(result);
@@ -74,9 +76,9 @@ public class Main {
 	 * an ugly number or not. 
 	 */
 	public static boolean isUgly(String inp, int[] com) {
-		int answer = 0;
-		int operator = 1;
-		int operand = Integer.parseInt(String.valueOf(inp.charAt(0)));
+		long answer = 0;
+		long operator = 1;
+		long operand = Integer.parseInt(String.valueOf(inp.charAt(0)));
 		for (int i = 0; i < com.length; i++) {
 			if (com[i] == 0) {
 				operand = operand * 10 + Integer.parseInt(String.valueOf(inp.charAt(i + 1)));
